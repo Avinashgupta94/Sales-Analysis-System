@@ -1,6 +1,7 @@
 # Sales Analysis System (AdventureWorksLT2019)
 
-A step-by-step SQL Server project implementing a Sales Analysis System using **AdventureWorksLT2019**. The project demonstrates creation of a view, stored procedure, analytical queries, and execution logic.
+A step-by-step SQL Server project implementing a Sales Analysis System using AdventureWorksLT2019.  
+The project demonstrates creation of a view, stored procedure, analytical queries, and execution logic.
 
 ---
 
@@ -24,8 +25,7 @@ JOIN SalesLT.SalesOrderDetail sod
 JOIN SalesLT.Product p
     ON sod.ProductID = p.ProductID;
 ```
-
-![Create View](Step1_Create_View.png)
+![Step 1 Screenshot](Screenshots/Step1_Create_View.png)
 
 ---
 
@@ -42,12 +42,14 @@ BEGIN
     FROM SalesLT.Product
     WHERE ProductID = @ProductID;
 
+    -- Check if the new price is valid
     IF @NewPrice < (@CurrentPrice * 0.5)
     BEGIN
         PRINT 'Error: New price cannot be less than 50% of the current price.';
         RETURN;
     END
 
+    -- Update the price if valid
     UPDATE SalesLT.Product
     SET ListPrice = @NewPrice
     WHERE ProductID = @ProductID;
@@ -55,8 +57,7 @@ BEGIN
     PRINT 'Product price updated successfully.';
 END;
 ```
-
-![Stored Procedure](Step2_Create_StoredProcedure.png)
+![Step 2 Screenshot](Screenshots/Step2_Create_StoredProcedure.png)
 
 ---
 
@@ -67,50 +68,49 @@ FROM vw_SalesOrderDetails
 WHERE CustomerName = 'Andrea Thomsen'
 ORDER BY TotalPrice DESC;
 ```
-
-![Query View](Step3_Query_View.png)
+![Step 3 Screenshot](Screenshots/Step3_Query_View.png)
 
 ---
 
-### Step 4: Execute the Stored Procedure
+### Step 4: Execute the Procedure
 ```sql
-EXEC UpdateProductPrice 
+EXEC UpdateProductPrice
     @ProductID = 680,
     @NewPrice = 50.00;
 ```
-
-![Execute Procedure](Step4_Execute_Procedure.png)
+![Step 4 Screenshot](Screenshots/Step4_Execute_Procedure.png)
 
 ---
 
-## 🛠️ Tech Stack
-- **SQL Server 2019 / SSMS**
-- **AdventureWorksLT2019 Sample Database**
+## 🛠 Tech Stack
+- SQL Server 2019 / SSMS
+- AdventureWorksLT2019 Sample Database
+
+---
 
 ## 🎯 Learning Outcomes
-- Creating and managing **SQL Views**
-- Implementing **Stored Procedures with validation rules**
+- Creating and managing SQL Views
+- Implementing Stored Procedures with validation rules
 - Querying views for analytics
 - Executing and testing procedures
 
 ---
 
-## 📊 Project Screenshots
-
-### GitHub Overview
-![GitHub Project Overview](Screenshot%20(1240).jpg)
+✅ Project completed successfully as per provided PDF scenario.  
+Suitable for GitHub and LinkedIn portfolio showcase.
 
 ---
 
-✅ **Project completed successfully** as per provided PDF scenario. Suitable for GitHub and LinkedIn portfolio showcase.
-
-## 🔗 Repository Structure
+## 📂 Repository Structure
 ```
 Sales-Analysis-System/
+│
 ├── README.md
-├── Step1_Create_View.png.jpg
-├── Step2_Create_StoredProcedure.png.jpg
-├── Step3_Query_View.png.jpg
-├── Step4_Execute_Procedure.png.jpg
-└── Screenshot (1240).jpg
+├── Screenshots/
+│   ├── Step1_Create_View.png
+│   ├── Step2_Create_StoredProcedure.png
+│   ├── Step3_Query_View.png
+│   └── Step4_Execute_Procedure.png
 ```
+
+---
