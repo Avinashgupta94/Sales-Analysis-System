@@ -1,12 +1,12 @@
 # Sales Analysis System (AdventureWorksLT2019)
 
-A step-by-step SQL Server project implementing a Sales Analysis System using **AdventureWorksLT2019**. The project demonstrates creation of a view, stored procedure, analytical queries, and execution logic.
+A step-by-step SQL Server project using the **AdventureWorksLT2019** sample database in **SSMS**. The README embeds all SQL and screenshots inline for immediate review.
 
 ---
 
-## 📌 Project Steps
+## Project Steps
 
-### Step 1: Create the View
+### 1) Create the View
 ```sql
 CREATE VIEW vw_SalesOrderDetails AS
 SELECT
@@ -24,12 +24,11 @@ JOIN SalesLT.SalesOrderDetail sod
 JOIN SalesLT.Product p
     ON sod.ProductID = p.ProductID;
 ```
-
-![Create View](Step1_Create_View.png)
+![Step 1 – Create View](Screenshots/Step1_Create_View.png)
 
 ---
 
-### Step 2: Create the Stored Procedure
+### 2) Create the Stored Procedure
 ```sql
 CREATE PROCEDURE UpdateProductPrice
     @ProductID INT,
@@ -55,44 +54,34 @@ BEGIN
     PRINT 'Product price updated successfully.';
 END;
 ```
-
-![Stored Procedure](Step2_Create_StoredProcedure.png)
+![Step 2 – Create Stored Procedure](Screenshots/Step2_Create_StoredProcedure.png)
 
 ---
 
-### Step 3: Query the View
+### 3) Query the View
 ```sql
 SELECT *
 FROM vw_SalesOrderDetails
 WHERE CustomerName = 'Andrea Thomsen'
 ORDER BY TotalPrice DESC;
 ```
-
-![Query View](Step3_Query_View.png)
+![Step 3 – Query View](Screenshots/Step3_Query_View.png)
 
 ---
 
-### Step 4: Execute the Stored Procedure
+### 4) Execute the Stored Procedure
 ```sql
 EXEC UpdateProductPrice 
     @ProductID = 680,
     @NewPrice = 50.00;
 ```
-
-![Execute Procedure](Step4_Execute_Procedure.png)
+![Step 4 – Execute Procedure](Screenshots/Step4_Execute_Procedure.png)
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - SQL Server 2019 / SSMS
-- AdventureWorksLT2019 Sample Database
+- AdventureWorksLT2019
 
-## 🎯 Learning Outcomes
-- Creating and managing **SQL Views**
-- Implementing **Stored Procedures with validation rules**
-- Querying views for analytics
-- Executing and testing procedures
-
----
-
-✅ Project completed successfully as per provided PDF scenario. Suitable for GitHub and LinkedIn portfolio showcase.
+## Notes
+- Ensure screenshots are placed under `Screenshots/` with exact names used above.
