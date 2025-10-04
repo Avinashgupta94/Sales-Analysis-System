@@ -25,7 +25,7 @@ JOIN SalesLT.Product p
     ON sod.ProductID = p.ProductID;
 ```
 
-![Create View](Step1_Create_View.png.jpg)
+![Create View](Step1_Create_View.png)
 
 ---
 
@@ -56,7 +56,7 @@ BEGIN
 END;
 ```
 
-![Stored Procedure](Step2_Create_StoredProcedure.png.jpg)
+![Stored Procedure](Step2_Create_StoredProcedure.png)
 
 ---
 
@@ -68,7 +68,7 @@ WHERE CustomerName = 'Andrea Thomsen'
 ORDER BY TotalPrice DESC;
 ```
 
-![Query View](Step3_Query_View.png.jpg)
+![Query View](Step3_Query_View.png)
 
 ---
 
@@ -79,7 +79,7 @@ EXEC UpdateProductPrice
     @NewPrice = 50.00;
 ```
 
-![Execute Procedure](Step4_Execute_Procedure.png.jpg)
+![Execute Procedure](Step4_Execute_Procedure.png)
 
 ---
 
