@@ -1,12 +1,12 @@
 # Sales Analysis System (AdventureWorksLT2019)
 
-A step-by-step SQL Server project using the **AdventureWorksLT2019** sample database in **SSMS**. The README embeds all SQL and screenshots inline for immediate review.
+A step-by-step SQL Server project implementing a Sales Analysis System using **AdventureWorksLT2019**. The project demonstrates creation of a view, stored procedure, analytical queries, and execution logic.
 
 ---
 
-## Project Steps
+## 📌 Project Steps
 
-### 1) Create the View
+### Step 1: Create the View
 ```sql
 CREATE VIEW vw_SalesOrderDetails AS
 SELECT
@@ -24,11 +24,12 @@ JOIN SalesLT.SalesOrderDetail sod
 JOIN SalesLT.Product p
     ON sod.ProductID = p.ProductID;
 ```
-![Step 1 – Create View](Screenshots/Step1_Create_View.png)
+
+![Create View](Step1_Create_View.png.jpg)
 
 ---
 
-### 2) Create the Stored Procedure
+### Step 2: Create the Stored Procedure
 ```sql
 CREATE PROCEDURE UpdateProductPrice
     @ProductID INT,
@@ -54,34 +55,62 @@ BEGIN
     PRINT 'Product price updated successfully.';
 END;
 ```
-![Step 2 – Create Stored Procedure](Screenshots/Step2_Create_StoredProcedure.png)
+
+![Stored Procedure](Step2_Create_StoredProcedure.png.jpg)
 
 ---
 
-### 3) Query the View
+### Step 3: Query the View
 ```sql
 SELECT *
 FROM vw_SalesOrderDetails
 WHERE CustomerName = 'Andrea Thomsen'
 ORDER BY TotalPrice DESC;
 ```
-![Step 3 – Query View](Screenshots/Step3_Query_View.png)
+
+![Query View](Step3_Query_View.png.jpg)
 
 ---
 
-### 4) Execute the Stored Procedure
+### Step 4: Execute the Stored Procedure
 ```sql
 EXEC UpdateProductPrice 
     @ProductID = 680,
     @NewPrice = 50.00;
 ```
-![Step 4 – Execute Procedure](Screenshots/Step4_Execute_Procedure.png)
+
+![Execute Procedure](Step4_Execute_Procedure.png.jpg)
 
 ---
 
-## Tech Stack
-- SQL Server 2019 / SSMS
-- AdventureWorksLT2019
+## 🛠️ Tech Stack
+- **SQL Server 2019 / SSMS**
+- **AdventureWorksLT2019 Sample Database**
 
-## Notes
-- Ensure screenshots are placed under `Screenshots/` with exact names used above.
+## 🎯 Learning Outcomes
+- Creating and managing **SQL Views**
+- Implementing **Stored Procedures with validation rules**
+- Querying views for analytics
+- Executing and testing procedures
+
+---
+
+## 📊 Project Screenshots
+
+### GitHub Overview
+![GitHub Project Overview](Screenshot%20(1240).jpg)
+
+---
+
+✅ **Project completed successfully** as per provided PDF scenario. Suitable for GitHub and LinkedIn portfolio showcase.
+
+## 🔗 Repository Structure
+```
+Sales-Analysis-System/
+├── README.md
+├── Step1_Create_View.png.jpg
+├── Step2_Create_StoredProcedure.png.jpg
+├── Step3_Query_View.png.jpg
+├── Step4_Execute_Procedure.png.jpg
+└── Screenshot (1240).jpg
+```
